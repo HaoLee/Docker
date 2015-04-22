@@ -1,6 +1,6 @@
 FROM lihao/centos:latest
 MAINTAINER Li Hao <lihao@me.com>
-ADD MariaDB.repo /etc/yum.repos.d
+ADD MariaDB.repo /etc/yum.repos.d/
 RUN chmod 775 /etc/yum.repos.d/MariaDB.repo
 RUN yum -y install pwgen
 RUN yum -y install MariaDB-server
