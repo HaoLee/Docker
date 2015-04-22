@@ -12,8 +12,8 @@ done
 
 
 PASS=${MARIADB_PASS:-$(pwgen -s 12 1)}
-_word=$( [ ${MARIADB_PASS} ] && echo "preset" || echo "random" )
-echo "=> 已为您创建一个 MariaDB admin 用户，随机密码为： ${_word}"
+_word=$( [ ${MARIADB_PASS} ] && echo "预设" || echo "随机" )
+echo "=> 已为您创建一个 MariaDB admin 用户，使用 ${_word} 密码"
 
 mysql -uroot -e "CREATE USER 'admin'@'%' IDENTIFIED BY '$PASS'"
 mysql -uroot -e "GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION"
