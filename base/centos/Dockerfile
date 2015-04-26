@@ -1,4 +1,4 @@
-FROM centos7
+FROM centos:7
 MAINTAINER Li Hao <lihao@me.com>
 ENV container docker
 RUN yum -y swap -- remove fakesystemd -- install systemd systemd-libs
