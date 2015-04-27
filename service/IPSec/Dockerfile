@@ -3,6 +3,10 @@ MAINTAINER Li Hao <lihao@me.com>
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install -y strongswan
+
+RUN rm /etc/ipsec.conf
+RUN rm /etc/ipsec.secrets
+
 RUN mkdir /root/ipsec_cert && cd /root/ipsec_cert
 ADD server_key.sh /root/ipsec_cert/
 RUN chmod 775 /root/ipsec_cert/*.sh
@@ -16,9 +20,6 @@ RUN cp /root/ipsec_cert/private/vpnHostKey.pem /etc/ipsec.d/private/vpnHostKey.p
 
 ADD ipsec.conf /etc/
 ADD ipsec.secrets /etc/
-
-RUN chmod 755 /etc/ipsec.conf
-RUN chmod 755 /etc/ipsec.secrets
 
 RUN ipsec start
 
