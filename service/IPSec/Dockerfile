@@ -17,6 +17,9 @@ RUN cp /root/ipsec_cert/private/vpnHostKey.pem /etc/ipsec.d/private/vpnHostKey.p
 ADD ipsec.conf /etc/
 ADD ipsec.secrets /etc/
 
+RUN chmod 755 /etc/ipsec.conf
+RUN chmod 755 /etc/ipsec.secrets
+
 RUN ipsec start
 
 EXPOSE 500/udp 4500/udp
