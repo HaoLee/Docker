@@ -9,7 +9,6 @@ RUN chmod 775 /root/ipsec_cert/*.sh
 
 RUN /root/ipsec_cert/server_key.sh 45.62.113.32
 
-RUN cp /root/ipsec_cert/cacerts/strongswanCert.pem /etc/ipsec.d/cacerts/strongswanCert.pem 
 RUN cp /root/ipsec_cert/certs/vpnHostCert.pem /etc/ipsec.d/certs/vpnHostCert.pem
 RUN cp /root/ipsec_cert/private/vpnHostKey.pem /etc/ipsec.d/private/vpnHostKey.pem
 
