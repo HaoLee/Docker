@@ -3,7 +3,7 @@ MAINTAINER Li Hao <lihao@me.com>
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install -y strongswan
-RUM mkdir ~/ipsec_cert && cd ~/ipsec_cert
+RUN mkdir ~/ipsec_cert && cd ~/ipsec_cert
 ADD server_key.sh ~/ipsec_cert/
 ADD client_key.sh ~/ipsec_cert/
 RUN chmod 775 ~/ipsec_cert/*.sh
