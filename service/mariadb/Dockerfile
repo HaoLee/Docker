@@ -1,7 +1,9 @@
-FROM lihao/centos:latest
+FROM centos:7
 MAINTAINER Li Hao <lihao@me.com>
 ADD MariaDB.repo /etc/yum.repos.d/
 RUN chmod 775 /etc/yum.repos.d/MariaDB.repo
+RUN yum update
+RUN yun -y upgrade
 RUN yum -y install pwgen
 RUN yum -y install MariaDB-server
 RUN rm -rf /var/lib/mysql/*
